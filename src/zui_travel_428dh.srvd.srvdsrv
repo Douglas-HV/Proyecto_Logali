@@ -1,0 +1,15 @@
+@EndUserText.label: 'Travel - Service Definition'
+define service ZUI_TRAVEL_428DH {
+  expose ZC_TRAVEL_428DH          as Travel;
+  expose ZC_BOOKING_428DH         as Booking;
+  expose ZC_BSUPPL_428DH          as BookingSupplement;
+  expose /DMO/I_Customer          as Passenger;
+  expose /DMO/I_Agency            as TravelAgency;
+  expose /DMO/I_Carrier           as Airline;
+  expose /DMO/I_Connection        as FlightConnection;
+  expose /DMO/I_Flight            as Flight;
+  expose /DMO/I_Airport           as Airport;
+  expose /DMO/I_Overall_Status_VH as OverallStatus;
+  expose I_Currency               as Currency;
+  expose I_Country                as Country;
+}
