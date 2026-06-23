@@ -1,20 +1,29 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking - Consupmtions'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity ZC_BOOKING_428DH as projection on ZI_BOOKING_428DH
 {
     key BookingUUID,
     TravelUUID,
     BookingID,
     BookingDate,
+    @ObjectModel.text.element: [ 'CustomerName' ]
     CustomerID,
+    CustomerName,
+    @ObjectModel.text.element: [ 'AirlineName' ]
     AirlineID,
+    AirLineName,
+    @ObjectModel.text.element: [ 'ConnectionRoute' ]
     ConnectionID,
+    ConnectionRoute,
     FlightDate,
     CurrencyCode,
     @Semantics.amount.currencyCode: 'CurrencyCode'
     FlightPrice,
+    @ObjectModel.text.element: [ 'BookingStatusText' ]
     BookingStatus,
+    _BookingStatus._Text.Text as BookingStatusText : localized,
     @Semantics.systemDateTime.localInstanceLastChangedAt: true
     LocalLastChangedAt,
     /* Associations */
